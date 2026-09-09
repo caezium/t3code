@@ -61,6 +61,10 @@ const RESIZE_HANDLES: ReadonlyArray<{
   { direction: "southeast", className: "-bottom-2 -right-2 size-4 cursor-nwse-resize" },
 ];
 
+/**
+ * Floats the thread's browser surface over chat. Native clipping and the DOM
+ * frame use the same radius so their separately composited edges stay aligned.
+ */
 export function ThreadPreviewMiniPlayer({ threadRef, tabId, bottomInset }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const gestureRef = useRef<PointerGesture | null>(null);
